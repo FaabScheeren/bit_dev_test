@@ -1,0 +1,39 @@
+@import '../../atoms/fonts/fonts';
+@import '../../atoms/spacing/spacings';
+@import '../../atoms/colors/colors';
+
+.checkbox {
+  &_label {
+    display: flex;
+    margin-bottom: $spacing-sm;
+    align-items: center;
+    font-family: $default-font;
+  }
+
+  &_input {
+    margin: 0 12px 0 0;
+    display: none;
+
+    & + label {
+      &:before {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        position: relative;
+        display: inline-block;
+        content: url('./checkboxes/Unchecked.svg');
+      }
+    }
+
+    &:checked + label {
+      &:before {
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        position: relative;
+        display: inline-block;
+        content: url('./checkboxes/Checked.svg');
+      }
+    }
+  }
+}

@@ -1,23 +1,27 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Buttons from './molecules/button/Button'
+import Inputfield from "./molecules/inputfield/Inputfield";
+import Checkbox from "./molecules/checkbox/Checkbox";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{ textAlign: "left" }}>
+        <Buttons
+          classes="btn-primary fixed_width"
+          text="Press me"
+          // iconRight="arrow-right"
+          iconLeft="home"
+        />
+        <Inputfield label="E-mailadres" placeholder="Vul hier iets leuks in" />
+        <Checkbox
+          name="yes"
+          for="yes_option"
+          labelText="Wow ja deze wil ik!"
+        />
+        <Checkbox name="no" for="no_option" labelText="Deze optie stinkt" />
+      </div>
     </div>
   );
 }
